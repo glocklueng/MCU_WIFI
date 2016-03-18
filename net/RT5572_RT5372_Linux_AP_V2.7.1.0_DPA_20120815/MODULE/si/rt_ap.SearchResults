@@ -1,0 +1,60 @@
+---- get_unaligned Matches (59 in 12 files) ----
+Ap_cfg.c (ap):					senderID = get_unaligned((INT32 *)(&msgHdr->Addr2[0]));
+Cmm_data.c (common):					srcPort = OS_NTOHS(get_unaligned((PUINT16)(pSrcBuf)));
+Cmm_data.c (common):					dstPort = OS_NTOHS(get_unaligned((PUINT16)(pSrcBuf+2)));
+Cmm_mat.c (common):	protoType_ori = get_unaligned((PUINT16)(pPktHdr + 12));
+Cmm_mat.c (common):		protoType_ori = get_unaligned((PUINT16)(pPktHdr + 12 + 4));
+Cmm_mat.c (common):	protoType = OS_NTOHS(get_unaligned((PUINT16)(pPktHdr + 12)));
+Cmm_mat_iparp.c (common):	isGoodIP = IS_GOOD_IP(get_unaligned32((PUINT) pSIP));
+Cmm_mat_iparp.c (common):		IPMacTableUpdate(pMatCfg, pSMac, get_unaligned32((PUINT) pSIP));
+Cmm_mat_iparp.c (common):	needUpdate = NEED_UPDATE_IPMAC_TB(pSrcMac, get_unaligned32((PUINT)(pSrcIP)));
+Cmm_mat_iparp.c (common):		IPMacTableUpdate(pMatCfg, pSrcMac, get_unaligned32((PUINT)(pSrcIP)));
+Cmm_mat_iparp.c (common):		srcPort = OS_NTOHS(get_unaligned((PUINT16)(udpHdr)));
+Cmm_mat_iparp.c (common):		dstPort = OS_NTOHS(get_unaligned((PUINT16)(udpHdr+2)));
+Cmm_mat_iparp.c (common):			bootpFlag = OS_NTOHS(get_unaligned((PUINT16)(bootpHdr+10)));
+Cmm_mat_ipv6.c (common):		csum += get_unaligned32(((UINT32 *)&pICMPMsg[i]));
+Cmm_mat_ipv6.c (common):		carry = (csum < get_unaligned32(((UINT32 *)&pICMPMsg[i])));
+Cmm_mat_pppoe.c (common):		sesID = OS_NTOHS(get_unaligned((PUINT16)(pData)));
+Cmm_mat_pppoe.c (common):	payloadLen = OS_NTOHS(get_unaligned((PUINT16)(pData)));
+Cmm_mat_pppoe.c (common):		tagID = OS_NTOHS(get_unaligned((PUINT16)(pData)));
+Cmm_mat_pppoe.c (common):		tagLen = OS_NTOHS(get_unaligned((PUINT16)(pData+2)));
+Cmm_mat_pppoe.c (common):		sesID = OS_NTOHS(get_unaligned((PUINT16)(pData)));
+Cmm_mat_pppoe.c (common):	payloadLen = OS_NTOHS(get_unaligned((PUINT16)(pData)));
+Cmm_mat_pppoe.c (common):		tagID = OS_NTOHS(get_unaligned((PUINT16)(pData)));
+Cmm_mat_pppoe.c (common):		tagLen = OS_NTOHS(get_unaligned((PUINT16)(pData+2)));
+Cmm_mat_pppoe.c (common):	sesID = OS_NTOHS(get_unaligned((PUINT16)(pData)));
+Rt_drv.h (include\os):#define get_unaligned		RtmpOsGetUnaligned
+Rt_drv.h (include\os):#define get_unaligned32		RtmpOsGetUnaligned32
+Rt_drv.h (include\os):#define get_unalignedlong	RtmpOsGetUnalignedlong
+Rt_linux.c (os\linux):	get_unaligned for 16-bit value.
+Rt_linux.c (os\linux):	return get_unaligned(pWord);
+Rt_linux.c (os\linux):	get_unaligned for 32-bit value.
+Rt_linux.c (os\linux):	return get_unaligned(pWord);
+Rt_linux.c (os\linux):	get_unaligned for long-bit value.
+Rt_linux.c (os\linux):	return get_unaligned(pWord);
+Rt_linux.h (include\os):#include <asm/unaligned.h>	/* for get_unaligned() */
+Rt_linux.h (include\os):#define get_unaligned32							get_unaligned
+Rt_linux.h (include\os):#define get_unalignedlong						get_unaligned
+Wsc.c (common):					DevicePasswordID = be2cpu16(get_unaligned((USHORT *)&pWscIE->Data[0]));
+Wsc.h (include):	if (cpu2be32(get_unaligned32(&pWsc->VendorType)) != WSC_VENDOR_TYPE)
+Wsc_tlv.c (common):				tmpVal = get_unaligned((PUSHORT) pData);
+Wsc_tlv.c (common):				tmpVal = get_unaligned((PUSHORT) pData);
+Wsc_tlv.c (common):				pReg->PeerInfo.ConfigMethods = get_unaligned((PUSHORT) pData);/**((PUSHORT) pData); */
+Wsc_tlv.c (common):				pReg->PeerInfo.ScState = get_unaligned((PUSHORT) pData);/**((PUSHORT) pData); */
+Wsc_tlv.c (common):				pReg->PeerInfo.AssocState = get_unaligned((PUSHORT) pData);/**((PUSHORT) pData); */
+Wsc_tlv.c (common):				pReg->PeerInfo.ConfigError = get_unaligned((PUSHORT) pData);/**((PUSHORT) pData); */
+Wsc_tlv.c (common):				if(WSC_DEVICEPWDID_DEFAULT == get_unaligned((PUSHORT) pData))/**(PUSHORT) pData) */
+Wsc_tlv.c (common):				else if(WSC_DEVICEPWDID_PUSH_BTN == get_unaligned((PUSHORT) pData))/**(PUSHORT) pData) */
+Wsc_tlv.c (common):				pReg->PeerInfo.OsVersion = get_unalignedlong((PULONG) pData);/**((PULONG) pData); */
+Wsc_tlv.c (common):				pReg->PeerInfo.AuthTypeFlags = get_unaligned((PUSHORT) pData);
+Wsc_tlv.c (common):				pReg->PeerInfo.EncrTypeFlags = get_unaligned((PUSHORT) pData);
+Wsc_tlv.c (common):				pReg->PeerInfo.ConfigMethods = get_unaligned((PUSHORT) pData);
+Wsc_tlv.c (common):				pReg->PeerInfo.AssocState = get_unaligned((PUSHORT) pData);
+Wsc_tlv.c (common):				pReg->PeerInfo.ConfigError = get_unaligned((PUSHORT) pData);
+Wsc_tlv.c (common):				pReg->PeerInfo.OsVersion = get_unalignedlong((PULONG) pData);
+Wsc_tlv.c (common):				pReg->PeerInfo.AuthTypeFlags = get_unaligned((PUSHORT) pData);/**((PUSHORT) pData); */
+Wsc_tlv.c (common):				pReg->PeerInfo.EncrTypeFlags = get_unaligned((PUSHORT) pData);/**((PUSHORT) pData); */
+Wsc_tlv.c (common):				pReg->PeerInfo.ConfigMethods = be2cpu16(get_unaligned((PUSHORT) pData));/*be2cpu16(*((PUSHORT) pData)); */
+Wsc_tlv.c (common):				pReg->PeerInfo.AssocState = get_unaligned((PUSHORT) pData);/**((PUSHORT) pData); */
+Wsc_tlv.c (common):				pReg->PeerInfo.ConfigError = get_unaligned((PUSHORT) pData);/**((PUSHORT) pData); */
+Wsc_tlv.c (common):				pReg->PeerInfo.OsVersion = get_unalignedlong((PULONG)pData);
